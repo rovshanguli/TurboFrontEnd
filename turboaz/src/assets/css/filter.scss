@@ -1,0 +1,35 @@
+.filter {
+  overflow: hidden;
+  transition: all .3s;
+  background-color: aliceblue;
+
+  .today {
+    font-size: large;
+    font-weight: 400;
+
+  }
+
+  .more {
+    font-size: large;
+    cursor: pointer;
+
+    .moreicon {
+      font-size: 32px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .more-filter {
+    transition: all 3000 !important;
+    overflow: hidden;
+
+    .morefilter {
+      transition: all .3s;
+      width: 100%;
+      background-color: red;
+    }
+  }
+}

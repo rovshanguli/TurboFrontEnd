@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+
+    .headercontain {
+        width: 100%;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: space-between;
+
+        span{
+            margin: 10px;
+            i{
+                margin: 7px;
+            }
+        }
+
+    }
+}
+
