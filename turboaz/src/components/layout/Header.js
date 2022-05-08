@@ -1,7 +1,6 @@
-import React from 'react'
-import '../../assets/css/layout/header.scss'
-import Filter from '../Filter'
-import Navbar from './Navbar'
+import React from 'react';
+import '../../assets/css/layout/header.scss';
+
 function Header() {
     return (
         <div>
@@ -15,8 +14,7 @@ function Header() {
                 </div>
 
             </div>
-            <Navbar/>
-            <Filter/>
+            
         </div>
     )
 }

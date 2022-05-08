@@ -11,10 +11,12 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import Button from '@mui/material/Button';
-import { Link } from '@mui/material';
 
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 
@@ -61,24 +63,14 @@ function Filter() {
         );
     };
 
-    const [currency, setCurrency] = React.useState('AZN');
+    const [currency, setCurrency] = useState('AZN');
 
     const handleChange = (event) => {
         setCurrency(event.target.value);
     };
 
-    const moreFilter = () => {
-        var element = document.getElementById("morefilter");
-        if (element.classList.contains('more-filter')) {
-            element.classList.remove("more-filter");
-            element.style.height = "0px";
 
-        }else{
-            element.classList.add("more-filter");
-            element.style.height = "250px";
-            element.innerText('Daha az')
-        }
-    }
+
 
     return (
         <div className='filter'>
@@ -161,7 +153,7 @@ function Filter() {
                                                 value="end"
                                                 control={<Checkbox />}
                                                 label="Barter"
-                                                labelPlacement="Barter"
+
                                             />
                                         </FormGroup>
                                     </FormControl>
@@ -173,7 +165,7 @@ function Filter() {
                                                 value="end"
                                                 control={<Checkbox />}
                                                 label="Kredit"
-                                                labelPlacement="Kredit"
+
                                             />
                                         </FormGroup>
                                     </FormControl>
@@ -214,26 +206,239 @@ function Filter() {
                             />
                         </div>
                     </div>
-                    <div className="more-filter row mt-2" >
-                        <div className="morefilter col-12" id='morefilter'>
 
+                    <div className="row mt-2">
+                        <div className="col-12">
+                            <Accordion>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                    sx={{ bgcolor: 'aliceblue' }}
+                                >
+                                <Typography> Bu gün :<a href='/'> 100 yeni elan</a></Typography>
+                                </AccordionSummary>
+                                <AccordionDetails sx={{ bgcolor: 'aliceblue' }}>
+                                    <Typography component={'span'} sx={{ bgcolor: 'aliceblue' }}>
+                                        <div className="row mt-2" id='more-filter' >
+                                            <div className="morefilterbody col-12 overflow-hidden">
+                                                <div className='row mt-2' >
+                                                    <div className="col-lg-3 col-md-6 col-sm-12" style={{ display: "flex" }}>
+                                                        <FormControl sx={{ width: '100%' }}>
+                                                            <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                                            <Select
+                                                                labelId="demo-multiple-checkbox-label"
+                                                                id="demo-multiple-checkbox"
+                                                                multiple
+                                                                value={personName}
+                                                                onChange={handleChange2}
+                                                                input={<OutlinedInput label="Ban Növü" />}
+                                                                renderValue={(selected) => selected.join(', ')}
+                                                                MenuProps={MenuProps}
+                                                            >
+                                                                {names.map((name) => (
+                                                                    <MenuItem key={name} value={name}>
+                                                                        <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                        <ListItemText primary={name} />
+                                                                    </MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                    <div className="col-lg-3 col-md-6 col-sm-12 d-flex ">
+
+                                                        <FormControl sx={{ width: '100%' }}>
+                                                            <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                                            <Select
+                                                                labelId="demo-multiple-checkbox-label"
+                                                                id="demo-multiple-checkbox"
+                                                                multiple
+                                                                value={personName}
+                                                                onChange={handleChange2}
+                                                                input={<OutlinedInput label="Ban Növü" />}
+                                                                renderValue={(selected) => selected.join(', ')}
+                                                                MenuProps={MenuProps}
+                                                            >
+                                                                {names.map((name) => (
+                                                                    <MenuItem key={name} value={name}>
+                                                                        <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                        <ListItemText primary={name} />
+                                                                    </MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                    <div className="col-lg-3 col-md-6 col-sm-12">
+                                                        <FormControl sx={{ width: '100%' }}>
+                                                            <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                                            <Select
+                                                                labelId="demo-multiple-checkbox-label"
+                                                                id="demo-multiple-checkbox"
+                                                                multiple
+                                                                value={personName}
+                                                                onChange={handleChange2}
+                                                                input={<OutlinedInput label="Ban Növü" />}
+                                                                renderValue={(selected) => selected.join(', ')}
+                                                                MenuProps={MenuProps}
+                                                            >
+                                                                {names.map((name) => (
+                                                                    <MenuItem key={name} value={name}>
+                                                                        <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                        <ListItemText primary={name} />
+                                                                    </MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                    <div className="col-lg-3 col-md-6 col-sm-12">
+                                                        <FormControl sx={{ width: '100%' }}>
+                                                            <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                                            <Select
+                                                                labelId="demo-multiple-checkbox-label"
+                                                                id="demo-multiple-checkbox"
+                                                                multiple
+                                                                value={personName}
+                                                                onChange={handleChange2}
+                                                                input={<OutlinedInput label="Ban Növü" />}
+                                                                renderValue={(selected) => selected.join(', ')}
+                                                                MenuProps={MenuProps}
+                                                            >
+                                                                {names.map((name) => (
+                                                                    <MenuItem key={name} value={name}>
+                                                                        <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                        <ListItemText primary={name} />
+                                                                    </MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                </div>
+                                                <div className='row mt-2' >
+                                                    <div className="col-lg-3 col-md-6 col-sm-12" style={{ display: "flex" }}>
+                                                        <div className="row m-0" style={{ width: '100%' }}>
+                                                            <div className="col-7 p-0">
+                                                                <FormControl sx={{ width: '100%' }}>
+                                                                    <InputLabel id="demo-multiple-checkbox-label">Həcm min</InputLabel>
+                                                                    <Select
+                                                                        labelId="demo-multiple-checkbox-label"
+                                                                        id="demo-multiple-checkbox"
+                                                                        multiple
+                                                                        value={personName}
+                                                                        onChange={handleChange2}
+                                                                        input={<OutlinedInput label="Ban Növü" />}
+                                                                        renderValue={(selected) => selected.join(', ')}
+                                                                        MenuProps={MenuProps}
+                                                                    >
+                                                                        {names.map((name) => (
+                                                                            <MenuItem key={name} value={name}>
+                                                                                <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                                <ListItemText primary={name} />
+                                                                            </MenuItem>
+                                                                        ))}
+                                                                    </Select>
+                                                                </FormControl>
+                                                            </div>
+                                                            <div className="col-5 p-0">
+                                                                <FormControl sx={{ width: '100%' }}>
+                                                                    <InputLabel id="demo-multiple-checkbox-label">Max</InputLabel>
+                                                                    <Select
+                                                                        labelId="demo-multiple-checkbox-label"
+                                                                        id="demo-multiple-checkbox"
+                                                                        multiple
+                                                                        value={personName}
+                                                                        onChange={handleChange2}
+                                                                        input={<OutlinedInput label="Ban Növü" />}
+                                                                        renderValue={(selected) => selected.join(', ')}
+                                                                        MenuProps={MenuProps}
+                                                                    >
+                                                                        {names.map((name) => (
+                                                                            <MenuItem key={name} value={name}>
+                                                                                <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                                <ListItemText primary={name} />
+                                                                            </MenuItem>
+                                                                        ))}
+                                                                    </Select>
+                                                                </FormControl>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-lg-3 col-md-6 col-sm-12 d-flex ">
+
+                                                        <FormControl sx={{ width: '100%' }}>
+                                                            <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                                            <Select
+                                                                labelId="demo-multiple-checkbox-label"
+                                                                id="demo-multiple-checkbox"
+                                                                multiple
+                                                                value={personName}
+                                                                onChange={handleChange2}
+                                                                input={<OutlinedInput label="Ban Növü" />}
+                                                                renderValue={(selected) => selected.join(', ')}
+                                                                MenuProps={MenuProps}
+                                                            >
+                                                                {names.map((name) => (
+                                                                    <MenuItem key={name} value={name}>
+                                                                        <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                        <ListItemText primary={name} />
+                                                                    </MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                    <div className="col-lg-3 col-md-6 col-sm-12">
+                                                        <FormControl sx={{ width: '100%' }}>
+                                                            <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                                            <Select
+                                                                labelId="demo-multiple-checkbox-label"
+                                                                id="demo-multiple-checkbox"
+                                                                multiple
+                                                                value={personName}
+                                                                onChange={handleChange2}
+                                                                input={<OutlinedInput label="Ban Növü" />}
+                                                                renderValue={(selected) => selected.join(', ')}
+                                                                MenuProps={MenuProps}
+                                                            >
+                                                                {names.map((name) => (
+                                                                    <MenuItem key={name} value={name}>
+                                                                        <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                        <ListItemText primary={name} />
+                                                                    </MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                    <div className="col-lg-3 col-md-6 col-sm-12">
+                                                        <FormControl sx={{ width: '100%' }}>
+                                                            <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                                            <Select
+                                                                labelId="demo-multiple-checkbox-label"
+                                                                id="demo-multiple-checkbox"
+                                                                multiple
+                                                                value={personName}
+                                                                onChange={handleChange2}
+                                                                input={<OutlinedInput label="Ban Növü" />}
+                                                                renderValue={(selected) => selected.join(', ')}
+                                                                MenuProps={MenuProps}
+                                                            >
+                                                                {names.map((name) => (
+                                                                    <MenuItem key={name} value={name}>
+                                                                        <Checkbox checked={personName.indexOf(name) > -1} />
+                                                                        <ListItemText primary={name} />
+                                                                    </MenuItem>
+                                                                ))}
+                                                            </Select>
+                                                        </FormControl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Typography>
+                                </AccordionDetails>
+                            </Accordion>
                         </div>
-                        <div className="today col-lg-5 col-md-6 col-sm-12">
-                            <span>Bu gün : </span>
-                            <a href='/'>100 yeni elan</a>
-                        </div>
-                        <div className="col-lg-2 col-md-6 col-sm-12 ">
-                            <a href='/'>Sifirla</a>
-                        </div>
-                        <div className="more col-lg-2 col-md-6 col-sm-12 ">
-                            <Link onClick={() => moreFilter()}>Daha çox filter
-                                <KeyboardArrowDownIcon className='moreicon' />
-                            </Link>
-                        </div>
-                        <div className="d-flex justify-content-end col-lg-3 col-md-6 col-sm-12 ">
-                            <Button variant="outlined">Elanları göstər</Button>
-                        </div>
+
                     </div>
+
 
                 </form>
             </div >
