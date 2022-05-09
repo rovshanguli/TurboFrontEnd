@@ -165,7 +165,8 @@ function App() {
           </div>
         </BoxUpload>
 
-        {isUploaded ? <h2>Type is {typeFile}</h2> : null}
+
+
       </Container>
     </Layout>
   );
