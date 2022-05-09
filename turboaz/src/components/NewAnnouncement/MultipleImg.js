@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import FolderIcon from "../../assets/folder_icon_transparent.png";
-import CloseIcon from "../../assets/CloseIcon.svg";
+import FolderIcon from "../../assets/img/newannouncement/uploadimg/frontofcar.png";
+import CloseIcon from "../../assets/img/newannouncement/uploadimg/CloseIcon.svg";
 import styled from 'styled-components'
 
 export const Layout = styled.div`
@@ -120,7 +120,7 @@ function App() {
                     src={FolderIcon}
                     draggable={"false"}
                     alt="placeholder"
-                    style={{ width: 100, height: 100 }}
+                    style={{ width: '100%', height: '100%' }}
                   />
                   <p style={{ color: "#444" }}>Click to upload image</p>
                 </label>
