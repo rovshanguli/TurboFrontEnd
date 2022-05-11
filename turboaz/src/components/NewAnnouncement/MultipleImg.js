@@ -74,6 +74,7 @@ function App() {
               <>
                 <label htmlFor="upload-input">
                   <img
+                   className="carimg"
                     src={FrontCar}
                     draggable={"false"}
                     alt="placeholder"
@@ -127,6 +128,7 @@ function App() {
               <>
                 <label htmlFor="upload-input">
                   <img
+                   className="carimg"
                     src={BackCar}
                     draggable={"false"}
                     alt="placeholder"
@@ -180,6 +182,7 @@ function App() {
               <>
                 <label htmlFor="upload-input">
                   <img
+                  className="carimg"
                     src={InsideCar}
                     draggable={"false"}
                     alt="placeholder"

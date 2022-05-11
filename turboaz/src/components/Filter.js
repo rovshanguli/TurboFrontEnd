@@ -217,7 +217,10 @@ function Filter() {
                                     sx={{ bgcolor: 'aliceblue' }}
                                 >
                                 <Typography> Bu gün :<a href='/'> 100 yeni elan</a></Typography>
+                                
+                                <button className='btn btn-primary'>Elanları Göstər</button>
                                 </AccordionSummary>
+                              
                                 <AccordionDetails sx={{ bgcolor: 'aliceblue' }}>
                                     <Typography component={'span'} sx={{ bgcolor: 'aliceblue' }}>
                                         <div className="row mt-2" id='more-filter' >
@@ -433,9 +436,13 @@ function Filter() {
                                             </div>
                                         </div>
                                     </Typography>
+                                  
                                 </AccordionDetails>
+                            
                             </Accordion>
+                         
                         </div>
+                     
 
                     </div>
 

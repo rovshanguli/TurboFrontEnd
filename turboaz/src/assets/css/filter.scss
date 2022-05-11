@@ -8,10 +8,14 @@
     font-weight: 400;
 
   }
+
   a {
     text-decoration: none;
   }
 
+  .css-o4b71y-MuiAccordionSummary-content {
+    justify-content: space-between;
+  }
   #more-filter {
     transition: all 3000 !important;
     overflow: hidden;
