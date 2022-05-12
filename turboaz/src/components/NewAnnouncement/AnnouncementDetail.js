@@ -4,13 +4,12 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import React from 'react'
+import React,{useState} from 'react'
 import '../../assets/css/newannouncement/announcementdetail.scss';
 
 function AnnouncementDetail() {
-    const [value, setValue] = React.useState('female');
-
+    const [value, setValue] = useState('female');
+    const [event,setEvent] = useState();
     const handleChange = (event) => {
       setValue(event.target.value);
     };
@@ -72,12 +71,13 @@ function AnnouncementDetail() {
                 <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
                     <div className='space'>
                         <label className='marka'>Ban Növü</label>
+                        
                         <Autocomplete
                             disablePortal
                             id="combo-box-demo"
                             options={top100Films}
                             sx={{ width: 400 }}
-                            renderInput={(params) => <TextField {...params} label="Movie" />}
+                            renderInput={ (params) =><TextField {...params} label="Movie" />}
                         />
                     </div>
 
@@ -86,6 +86,7 @@ function AnnouncementDetail() {
                     <div className='space'>
                         <label className='marka'>Sürət Qutusu</label>
                         <Autocomplete
+                            onChange={(event, value) => console.log(value)}
                             disablePortal
                             id="combo-box-demo"
                             options={top100Films}
