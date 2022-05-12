@@ -4,14 +4,13 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import '../../assets/css/newannouncement/announcementdetail.scss';
 
 function AnnouncementDetail() {
     const [value, setValue] = useState('female');
-    const [event,setEvent] = useState();
     const handleChange = (event) => {
-      setValue(event.target.value);
+        setValue(event.target.value);
     };
     return (
         <div className='container'>
@@ -71,13 +70,13 @@ function AnnouncementDetail() {
                 <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
                     <div className='space'>
                         <label className='marka'>Ban Növü</label>
-                        
+
                         <Autocomplete
                             disablePortal
                             id="combo-box-demo"
                             options={top100Films}
                             sx={{ width: 400 }}
-                            renderInput={ (params) =><TextField {...params} label="Movie" />}
+                            renderInput={(params) => <TextField {...params} label="Movie" />}
                         />
                     </div>
 
@@ -99,22 +98,24 @@ function AnnouncementDetail() {
                 <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
                     <div className='space'>
                         <label className='marka'>Yürüş</label>
-                        <div className='radiobut'>
-                        <FormControl>
-                          
-                          <RadioGroup
-                              aria-labelledby="demo-controlled-radio-buttons-group"
-                              name="controlled-radio-buttons-group"
-                              value={value}
-                              onChange={handleChange}
-                            
-                          >
-                              <FormControlLabel value="Km" control={<Radio />} label="Km" />
-                              <FormControlLabel value="Mi" control={<Radio />} label="Mi" />
-                          </RadioGroup>
-                      </FormControl>
+
+                        <div className='radiobut d-flex'>
+                            <TextField className='mb-2 mr-2' id="outlined-basic" label="Outlined" variant="outlined" sx={{ width: 255 }} type='number' min='0' value={'0'} />
+                            <FormControl style={{ display: 'flex' }} className='d-flex'>
+
+                                <RadioGroup
+                                    aria-labelledby="demo-controlled-radio-buttons-group"
+                                    name="controlled-radio-buttons-group"
+                                    value={value}
+                                    onChange={handleChange}
+                                    style={{ display: 'flex', flexDirection: 'row' }}
+                                >
+                                    <FormControlLabel value="Km" control={<Radio />} label="Km" />
+                                    <FormControlLabel value="Mi" control={<Radio />} label="Mi" />
+                                </RadioGroup>
+                            </FormControl>
                         </div>
-                      
+
                     </div>
 
                 </div>
