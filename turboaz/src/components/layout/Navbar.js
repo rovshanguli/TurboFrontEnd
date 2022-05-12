@@ -10,7 +10,7 @@ function Navbar() {
         <div className='navbar'>
             <div className="container">
                 <div className='logo'>
-                    <Link className='p-0 m-0' to='/'><h3 className='mx-1'>Turbo.az</h3></Link>
+                    <Link className='p-0 m-0' to='/'><h3 className='mx-1 logo' >Turbo.az</h3></Link>
                     <a href='/' className='mt-2'><span>Bütün Elanlar</span></a>
                     <a href='/' className='mt-2'><span>Avtosalonlar</span></a>
                 </div>

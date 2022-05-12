@@ -4,7 +4,8 @@ import BackCar from "../../assets/img/newannouncement/uploadimg/backofcar.png";
 import InsideCar from '../../assets/img/newannouncement/uploadimg/insideofcar.png'
 import CloseIcon from "../../assets/img/newannouncement/uploadimg/CloseIcon.svg";
 import styled from 'styled-components';
-import '../../assets/css/newannouncement/multipleimg.scss'
+import '../../assets/css/newannouncement/multipleimg.scss';
+
 
 
 
@@ -64,7 +65,7 @@ function App() {
   return (
 
     <div className="container">
-      <div className="row">
+      <div className="row mt-5">
         <div className="col-lg-3 col-md-6 col-sm-12">
 
         </div>

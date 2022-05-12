@@ -1,0 +1,15 @@
+.space{
+    display: flex;
+    justify-content: space-between;
+    .marka{
+        font-size: 20px;
+    }
+    .marka::after{
+        content: '*';
+        color: #c51e2b;;
+    }
+    .select{
+        width: 70%;
+    }
+}
+

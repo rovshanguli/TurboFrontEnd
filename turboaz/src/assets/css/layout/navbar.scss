@@ -11,9 +11,7 @@
             font-size:medium;
             font-weight: 500;
             margin-left: 10px;
-            &:hover{
-                color:aquamarine;
-            }
+
         }
     }
 
@@ -23,4 +21,10 @@
         }
     }
 
+}
+
+.logo{
+    &:hover{
+        color: #80e41b !important;
+    }
 }
