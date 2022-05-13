@@ -100,17 +100,20 @@ function AnnouncementDetail() {
                         <label className='marka'>Yürüş</label>
 
                         <div className='radiobut d-flex'>
-                            <TextField className='mb-2 mr-2' id="outlined-basic" label="Outlined" variant="outlined" sx={{ width: 255 }} type='number' min='0' value={'0'} />
+                            <TextField className='mb-2 mr-2' id="outlined-basic" label="Yürüş" variant="outlined" sx={{ width: 255 }} type='number' min='0' value={'0'} />
                             <FormControl style={{ display: 'flex' }} className='d-flex'>
 
                                 <RadioGroup
                                     aria-labelledby="demo-controlled-radio-buttons-group"
                                     name="controlled-radio-buttons-group"
                                     value={value}
+                                    defaultValue='Km'
+                                    defaultChecked='Km'
                                     onChange={handleChange}
                                     style={{ display: 'flex', flexDirection: 'row' }}
+                                    
                                 >
-                                    <FormControlLabel value="Km" control={<Radio />} label="Km" />
+                                    <FormControlLabel value="Km"  control={<Radio />} label="Km" />
                                     <FormControlLabel value="Mi" control={<Radio />} label="Mi" />
                                 </RadioGroup>
                             </FormControl>
@@ -129,6 +132,73 @@ function AnnouncementDetail() {
                             sx={{ width: 400 }}
                             renderInput={(params) => <TextField {...params} label="Movie" />}
                         />
+                    </div>
+
+                </div>
+                <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
+                    <div className='space'>
+                        <label className='marka'>Ban Növü</label>
+
+                        <Autocomplete
+                            disablePortal
+                            id="combo-box-demo"
+                            options={top100Films}
+                            sx={{ width: 400 }}
+                            renderInput={(params) => <TextField {...params} label="Movie" />}
+                        />
+                    </div>
+
+                </div>
+                <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
+                    <div className='space'>
+                        <label className='marka'>Sürət Qutusu</label>
+                        <Autocomplete
+                            onChange={(event, value) => console.log(value)}
+                            disablePortal
+                            id="combo-box-demo"
+                            options={top100Films}
+                            sx={{ width: 400 }}
+                            renderInput={(params) => <TextField {...params} label="Movie" />}
+                        />
+                    </div>
+
+                </div>
+                <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
+                    <div className='space'>
+                        <label className='marka'>Qiymət</label>
+
+                        <div className='radiobut d-flex'>
+                            <TextField className='mb-2 mr-2' id="outlined-basic" label="Qiymət" variant="outlined" sx={{ width: 150 }} type='number' min='0' value={'0'} />
+                            <FormControl style={{ display: 'flex' }} className='d-flex'>
+
+                                <RadioGroup
+                                    aria-labelledby="demo-controlled-radio-buttons-group"
+                                    name="controlled-radio-buttons-group"
+                                    value={value}
+                                    defaultValue='Km'
+                                    defaultChecked='Km'
+                                    onChange={handleChange}
+                                    style={{ display: 'flex', flexDirection: 'row' }}
+                                    
+                                >
+                                    <FormControlLabel value="AZN"  control={<Radio />} label="AZN" />
+                                    <FormControlLabel value="USD"  control={<Radio />} label="USD" />
+                                    <FormControlLabel value="EUR" control={<Radio />} label="EUR" />
+                                </RadioGroup>
+                            </FormControl>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
+                    <div className='space'>
+                        <label className='marka'>Qiymət</label>
+
+                        <div className='radiobut'>
+                            <TextField className='' id="outlined-basic" label="Qiymət" variant="outlined" sx={{ width: 400 }} type='number' min='0' value={'0'} />
+                        </div>
+
                     </div>
 
                 </div>
