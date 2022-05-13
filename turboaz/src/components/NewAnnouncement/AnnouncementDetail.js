@@ -1,9 +1,10 @@
-import { Autocomplete } from '@mui/material';
+import { Autocomplete, Checkbox } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
 import React, { useState } from 'react'
 import '../../assets/css/newannouncement/announcementdetail.scss';
 
@@ -111,9 +112,9 @@ function AnnouncementDetail() {
                                     defaultChecked='Km'
                                     onChange={handleChange}
                                     style={{ display: 'flex', flexDirection: 'row' }}
-                                    
+
                                 >
-                                    <FormControlLabel value="Km"  control={<Radio />} label="Km" />
+                                    <FormControlLabel value="Km" control={<Radio />} label="Km" />
                                     <FormControlLabel value="Mi" control={<Radio />} label="Mi" />
                                 </RadioGroup>
                             </FormControl>
@@ -179,10 +180,10 @@ function AnnouncementDetail() {
                                     defaultChecked='Km'
                                     onChange={handleChange}
                                     style={{ display: 'flex', flexDirection: 'row' }}
-                                    
+
                                 >
-                                    <FormControlLabel value="AZN"  control={<Radio />} label="AZN" />
-                                    <FormControlLabel value="USD"  control={<Radio />} label="USD" />
+                                    <FormControlLabel value="AZN" control={<Radio />} label="AZN" />
+                                    <FormControlLabel value="USD" control={<Radio />} label="USD" />
                                     <FormControlLabel value="EUR" control={<Radio />} label="EUR" />
                                 </RadioGroup>
                             </FormControl>
@@ -201,6 +202,18 @@ function AnnouncementDetail() {
 
                     </div>
 
+                </div>
+                <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
+                    <FormControlLabel control={<Checkbox />} label="Kreditdədir" />
+                    <FormControlLabel control={<Checkbox />} label="Barter Mümkündür" />
+                </div>
+                <div className='col-lg-6 col-md-8 col-sm-12 mt-5'>
+                    <TextareaAutosize
+                        aria-label="minimum height"
+                        minRows={3}
+                        placeholder="Əlavə Məlumat"
+                        style={{ width: '100%' }}
+                    />
                 </div>
             </div>
         </div>
