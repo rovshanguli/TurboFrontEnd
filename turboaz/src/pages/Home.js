@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/layout/Header';
 import Navbar from '../components/layout/Navbar';
 import Filter from '../components/Filter';
@@ -7,6 +7,7 @@ import MyCard from '../components/MyCard';
 
 function Home() {
 
+    const [imgs ,setImgs] = useState([])
     return (
 
         <div>
