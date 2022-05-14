@@ -1,29 +1,34 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import Header from '../components/layout/Header';
 import Navbar from '../components/layout/Navbar';
 import Filter from '../components/Filter';
 import MyCard from '../components/MyCard';
-import { Button } from 'antd';
 
 
 function Home() {
 
-    debugger
-    const [imgs, setImgs] = useState([])
-    const handleImgs = () => {
-        debugger
-        // imgs: [...imgs, 'new value']
-    }
-
-    imgs.useState()
     return (
 
         <div>
             <Header />
             <Navbar />
             <Filter />
-            <Button onClick={() => handleImgs()}>Data</Button>
-            <MyCard propImg={imgs}/>
+            <div className="container">
+                <div className="row">
+                    <div className="col-3">
+                        <MyCard/>
+                    </div>
+                    <div className="col-3">
+                        <MyCard/>
+                    </div>
+                    <div className="col-3">
+                        <MyCard/>
+                    </div>
+                    <div className="col-3">
+                        <MyCard/>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
