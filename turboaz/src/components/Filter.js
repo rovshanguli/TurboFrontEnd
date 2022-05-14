@@ -16,7 +16,6 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Link } from 'react-router-dom';
 
 
 
@@ -27,7 +26,7 @@ function Filter() {
     const skills = ["dasda"];
     const [personName, setPersonName] = React.useState([]);
     const [isSelect, setSelect] = useState(true)
-    const [valueauto, setValueauto] = React.useState(null);
+
 
     const ITEM_HEIGHT = 48;
     const ITEM_PADDING_TOP = 8;
@@ -81,15 +80,11 @@ function Filter() {
                             <Autocomplete
                                 disablePortal
                                 id="combo-box-demo"
-                                // value={valueauto}
-                                // onChange={(valueauto,newValue) => {
-                                //     setValueauto(newValue);
-                                //   }} 
                                 options={skills}
                                 sx={{ width: '100%' }}
 
                                 renderInput={(params) => <TextField {...params} label="Marka" />}
-                                 onChange={() => setSelect(false)}
+                                onChange={() => setSelect(false)}
                             />
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-12">
@@ -97,10 +92,6 @@ function Filter() {
 
                                 disablePortal
                                 id="combo-box-demo"
-                                // value={valueauto}
-                                // onChange={(valueauto,newValue) => {
-                                //     setValueauto(newValue);
-                                //   }} 
                                 options={skills}
                                 sx={{ width: '100%' }}
                                 renderInput={(params) => <TextField {...params} label="Model" />}
@@ -113,10 +104,6 @@ function Filter() {
                             <Autocomplete
                                 disablePortal
                                 id="combo-box-demo"
-                                // value={valueauto}
-                                // onChange={(valueauto,newValue) => {
-                                //     setValueauto(newValue);
-                                //   }} 
                                 options={skills}
                                 sx={{ width: '100%' }}
                                 renderInput={(params) => <TextField {...params} label="İstifadə" />}
@@ -126,10 +113,6 @@ function Filter() {
                             <Autocomplete
                                 disablePortal
                                 id="combo-box-demo"
-                                // value={valueauto}
-                                // onChange={(valueauto,newValue) => {
-                                //     setValueauto(newValue);
-                                //   }} 
                                 options={skills}
                                 sx={{ width: '100%', color: 'white' }}
                                 renderInput={(params) => <TextField {...params} label="Şəhər" />}
@@ -214,10 +197,6 @@ function Filter() {
                         <div className="col-lg-3 col-md-6 col-sm-12">
                             <Autocomplete
                                 className=''
-                                // value={valueauto}
-                                // onChange={(valueauto,newValue) => {
-                                //     setValueauto(newValue);
-                                //   }} 
                                 disablePortal
                                 id="combo-box-demo"
                                 options={skills}
@@ -229,18 +208,17 @@ function Filter() {
 
                     <div className="row mt-2">
                         <div className="col-12">
-                            <Accordion>
+                            <Accordion className=''>
                                 <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
+                                    expandIcon={<ExpandMoreIcon sx={{}} />}
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
-                                    sx={{ bgcolor: 'aliceblue' }}
+                                    sx={{ bgcolor: 'aliceblue', width: '100%' }}
+                                    aria-label="Expand"
                                 >
-                                    <Typography> Bu gün :<a href='/'> 100 yeni elan</a></Typography>
-                                    <div className='buttons'>
-                                        <Link to="/"  className='btn btn-danger'>Sıfırla</Link>
-                                        <button className='btn btn-primary'>Elanları Göstər</button>
-                                    </div>
+                                    <Typography> Bu gün :<a href='/'> 100 yeni elan</a>
+                                        <button className='btn btn-primary mx-3' style={{ right: '0', top: '0' }}>Elanları Göstər</button>
+                                    </Typography>
 
                                 </AccordionSummary>
 
