@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/css/filter.scss';
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
@@ -16,6 +16,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import axios from 'axios';
 
 
 
@@ -23,6 +24,21 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 function Filter() {
+    debugger
+    const [brands, setBrands] = useState([]);
+
+    useEffect(() => {
+        loadBrands();
+
+    }, []);
+
+    //get Books
+    const loadBrands = async () => {
+
+        const result = await axios.get("https://localhost:44351/api/Brand/GetAll");
+        setBrands(result.data);
+
+    }
     const skills = ["dasda"];
     const [personName, setPersonName] = React.useState([]);
     const [isSelect, setSelect] = useState(true)
@@ -79,26 +95,37 @@ function Filter() {
                         <div className="col-lg-3 col-md-6 col-sm-12">
                             <Autocomplete
                                 disablePortal
-                                id="combo-box-demo"
-                                options={skills}
-                                sx={{ width: '100%' }}
 
+                                options={brands}
+                                sx={{ width: '100%' }}
                                 renderInput={(params) => <TextField {...params} label="Marka" />}
+                                isOptionEqualToValue={(option, obj) => option.name === obj.name}
                                 onChange={() => setSelect(false)}
+                                getOptionLabel={(option) => option.name}
+                                getOptionValue={(option) => option.id}
                             />
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-12">
-                            <Autocomplete
-
-                                disablePortal
-                                id="combo-box-demo"
-                                options={skills}
-                                sx={{ width: '100%' }}
-                                renderInput={(params) => <TextField {...params} label="Model" />}
-
-                                readOnly={isSelect}
-
-                            />
+                            <FormControl sx={{ width: '100%' }}>
+                                <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                <Select
+                                    labelId="demo-multiple-checkbox-label"
+                                    id="demo-multiple-checkbox"
+                                    multiple
+                                    value={personName}
+                                    onChange={handleChange2}
+                                    input={<OutlinedInput label="Ban Növü" />}
+                                    renderValue={(selected) => selected.join(', ')}
+                                    MenuProps={MenuProps}
+                                >
+                                    {names.map((name) => (
+                                        <MenuItem key={name} value={name}>
+                                            <Checkbox checked={personName.indexOf(name) > -1} />
+                                            <ListItemText primary={name} />
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-12">
                             <Autocomplete
