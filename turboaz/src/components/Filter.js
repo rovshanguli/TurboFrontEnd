@@ -24,7 +24,7 @@ import axios from 'axios';
 
 
 function Filter() {
-    debugger
+    
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
@@ -35,8 +35,21 @@ function Filter() {
     //get Books
     const loadBrands = async () => {
 
-        const result = await axios.get("https://localhost:44351/api/Brand/GetAll");
-        setBrands(result.data);
+        const brands = await axios.get("https://localhost:44351/api/Brand/GetAll");
+        setBrands(brands.data);
+
+    }
+
+
+    const [models, setModels] = useState([]);
+    useEffect(() => {
+        loadModels();
+
+    }, []);
+    const loadModels = async () => {
+        
+        const models = await axios.get("https://localhost:44351/api/Brand/GetAll");
+        setModels(models.data);
 
     }
     const skills = ["dasda"];
@@ -107,18 +120,23 @@ function Filter() {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-12">
                             <FormControl sx={{ width: '100%' }}>
-                                <InputLabel id="demo-multiple-checkbox-label">Ban  Növü</InputLabel>
+                                
+                                <InputLabel id="demo-multiple-checkbox-label">Model</InputLabel>
                                 <Select
                                     labelId="demo-multiple-checkbox-label"
                                     id="demo-multiple-checkbox"
                                     multiple
                                     value={personName}
+                                    options={models}
                                     onChange={handleChange2}
-                                    input={<OutlinedInput label="Ban Növü" />}
+                                    getOptionLabel={(option) => option.name}
+                                    getOptionValue={(option) => option.id}
+                                    input={<OutlinedInput label="Model" />}
                                     renderValue={(selected) => selected.join(', ')}
                                     MenuProps={MenuProps}
                                 >
-                                    {names.map((name) => (
+                                    {models.map((name) => (
+                                        
                                         <MenuItem key={name} value={name}>
                                             <Checkbox checked={personName.indexOf(name) > -1} />
                                             <ListItemText primary={name} />
